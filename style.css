@@ -1,0 +1,255 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #c9f5fb;
+}
+
+.inner{
+display: flex;
+padding: 0 10px;
+align-items: center;
+justify-content: center;
+}
+
+::selection{
+  color: rgb(255, 255, 255);
+  background: #a3e300;
+}
+.header {
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  justify-content: center;
+  font-weight: 600;
+  margin:0 auto;  
+  font-size: 2rem;
+  margin: 3rem;
+}
+@media only screen and (max-width: 800px) {
+.header {
+    font-size: 0.9rem;
+  }
+}
+.wrapper{
+  width: 770px;
+  padding: 35px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.wrapper .input-field{
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+.wrapper .content-box{
+  padding: 13px 20px 0;
+  border-radius: 10px;
+  border: 2px solid #fae5e5;
+}
+.content-box .typing-text{
+  overflow-y: scroll;
+  max-height: 256px;
+}
+.typing-text::-webkit-scrollbar{
+  width: 0;
+}
+.typing-text p{
+  font-size: 21px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+.typing-text p span{
+  position: relative;
+}
+.typing-text p span.correct{
+  color: #66d759;
+}
+.typing-text p span.incorrect{
+  color: #01605c;
+  background: #f81442;
+}
+.typing-text p span.active{
+  color: #17A2B8;
+}
+.typing-text p span.active::before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5px;
+  background: #17A2B8;
+  animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+  50%{ 
+    opacity: 1; 
+  }
+}
+.content-box .content{
+  margin-top: 17px;
+  display: flex;
+  padding: 12px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #bfbfbf;
+}
+.content button{
+  outline: none;
+  border: none;
+  width: 105px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #17A2B8;
+  transition: transform 0.3s ease;
+}
+.content button:active{
+  transform: scale(0.97);
+}
+.content .result-details{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+}
+.result-details li{
+  display: flex;
+  height: 20px;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+.result-details li:not(:first-child){
+  padding-left: 22px;
+  border-left: 1px solid #bfbfbf;
+}
+.result-details li p{
+  font-size: 19px;
+}
+.result-details li span{
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+li span b{
+  font-weight: 500;
+}
+li:not(:first-child) span{
+  font-weight: 500;
+}
+@media (max-width: 745px) {
+  .wrapper{
+    padding: 20px;
+  }
+  .content-box .content{
+    padding: 20px 0;
+  }
+  .content-box .typing-text{
+    max-height: 100%;
+  }
+  .typing-text p{
+    font-size: 19px;
+    text-align: left;
+  }
+  .content button{
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  .content .result-details{
+    width: 100%;
+  }
+  .result-details li:not(:first-child){
+    border-left: 0;
+    padding: 0;
+  }
+  .result-details li p, 
+  .result-details li span{
+    font-size: 17px;
+  }
+}
+@media (max-width: 518px) {
+  .wrapper .content-box{
+    padding: 10px 15px 0;
+  }
+  .typing-text p{
+    font-size: 18px;
+  }
+  .result-details li{
+    margin-bottom: 10px;
+  }
+  .content button{
+    margin-top: 10px;
+  }
+}
+.result-details {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  border: 4px solid rgb(255, 190, 69);
+}
+
+.footer {
+  font-family: 'Nunito', sans-serif;
+  max-width: 100vw;
+  max-height: 100vw;
+  margin-top: 4rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-content {
+  margin-right:1.2rem;
+  display:flex;
+  flex-direction: row;
+  font-size: 2rem;
+  border-bottom: 4px solid #3f8efd;
+}
+
+.privacy {
+  padding: 3rem;
+  background-color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+.privacy-container {
+  border: 3px solid gray;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.h-privacy {
+  padding: 1rem;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+  font-size: 2rem;
+  border-left: 6px solid#3f8efd;
+}
+
+.p-privacy {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
